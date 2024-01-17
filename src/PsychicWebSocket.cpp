@@ -54,7 +54,7 @@ PsychicWebSocketClient::~PsychicWebSocketClient() {
 
 esp_err_t PsychicWebSocketClient::sendMessage(httpd_ws_frame_t * ws_pkt)
 {
-  return httpd_ws_send_frame_async(this->server(), this->socket(), ws_pkt);
+  return httpd_ws_send_data(this->server(), this->socket(), ws_pkt);
 } 
 
 esp_err_t PsychicWebSocketClient::sendMessage(httpd_ws_type_t op, const void *data, size_t len)
